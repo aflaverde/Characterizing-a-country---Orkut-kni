@@ -1,0 +1,139 @@
+% ----------------------------------------------------------
+% \documentclass[svn, draft]{rureport}
+\documentclass[svn, final]{rureport}
+% ----------------------------------------------------------
+\svnid{$Id: example-techreport.tex 48 2014-10-23 15:40:52Z foley $}
+% if you'd like the above information to be updated,
+% use svn properties to set svn:keywords to for Id and URL (or HeadURL)
+% Don't forget to set the draft to final before submitting
+
+%% The default fixmes are:  \fxnote{} \fxwarning{} \fxerror{} \fxfatal{} (same as \fixme{})
+% if you want personalized fixmes, then register the authors here
+% notice that the first field is 2 letters, the second is 3.
+\FXRegisterAuthor{jf}{jtf}{foley}
+% this registers \jfnote{}, \jfwarning{}, \jferror{}, \jffatal{}
+
+%% declare the paths(s) where you graphics files can be found
+\graphicspath{{graphics/}{Graphics/}{./}}
+
+\author{Andrés~Laverde\formatemail{andres20@ru.is}}  % My name, for the titlepage
+\title{Characterizing a country: Colombia}  % The title, for the titlepage
+\course{Energy technology}
+
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table} % Place table caption above
+
+\usepackage{url}
+\usepackage{amsmath}
+
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\usepackage{caption}
+\usepackage{hyperref} % must be last package loaded!
+% it makes hyper-references (citations, URLs, etc) clickable
+
+\begin{document} % this tells the compiler that it is time to make
+                 % text to print instead of just getting ready.
+\maketitle  % make a title page from the Title, Date, and Author
+\listoffixmes{}
+%\section*{Errata} %%section* avoids putting a number 
+%--------------------------------------------------------------%
+%------------------------ INTRODUCTION ------------------------%
+%--------------------------------------------------------------%
+
+\section{Introduction}
+Energy consumption and production, population growth and economical and social variables are crucial aspects to assess energy management and long-term energy policies. Therefore, evaluating the current energy situation and projecting future scenarios helps to understand factors that should be modified in the long term, in order to adjust policies to meet increasing demand in energy. 
+Colombia is a developing country rich in fossil energy resources (oil, gas and coal) and has additional renewable resources such as hydropower, biofuels, solar and wind power. Moreover, geothermal provides a potentially high energy source, although it has still not been developed to an industrial scale. There are several barriers in the implementation of new renewable energy projects due to economic, technical and social difficulties and this is evidenced in a poor primary energy source mix. Nevertheless, the Energy Mining Planing Unit (UPME) initiated the National Energy Plan (NEP) seeking to fulfil the energy requirements by 2050 within the framework of the global transformation of energy resources and looking for environmentally friendly alternatives. The objective of this plan is also to consider worldwide changes in energy policy, a fluctuating energy market and concerns about climate change \cite{UPME_plan2019}. This paper assesses the present situation of energy generation and consumption in Colombia and provides an estimation of future changes in the energy market, considering the population and economic growth and the development of new energy resources.
+
+%-------------------------------------------------------------------%
+%------------------------ LITERATURE REVIEW ------------------------%
+%-------------------------------------------------------------------%
+
+\section{Literature and data review}
+
+A review of government and company reports, and peer-reviewed bibliography was carried out to investigate current energy situation in Colombia. These sources included annual reports, projects, data and graphs of studies characterizing the energy sector. There are several reports presenting current energy indicators focused on production and consumption of primary energy, including energy flow diagrams, energy mix evaluation and annual supply/demand assessments \cite{UPME_plan2019, UPME_balance_2018, iadb_3_2015}. It is worth mentioning that the International Energy Agency [4] provides useful data and statistics regarding total energy production, primary energy supply, primary energy supply per GDP, electricity generation and consumption and CO2 emissions. The National Planning Department (DNP), the World Bank and the Korea Green Growth Partnership joint with Enersinc, a consulting firm for energy solutions, have developed a three phase report assessing critical points concerning energy supply, demand and future projects for a broader mix of energy resources in Colombia \cite{dnp_energy_supply_2017-1, dnp_energy_demand_2017-2, dnp_green_growth_2018}.
+
+Works presented in \cite{forero2019analysis, lopez2020solar, obregon2019study, rodriguez2018photovoltaic} provide an insight of the energy sector analyzing the current usage of renewable energy sources in Colombia and provide further possible applications of new projects to promote sustainable development. Furthermore, \cite{nieves2019energy} analyzes the present-day energy demand and greenhouse gas (GHG) emissions using a model to predict future variations in the energy usage and to calculate GHG emissions from different sources. Finally, a research on governmental resources was carried out to analyze current population and economic status in Colombia, using the National Administrative Department of Statistics (DANE) databases \cite{dane_population_2020, dane_gdp_2020}.
+
+%-------------------------------------------------------------------%
+%------------------- POPULATION AND ECONOMIC STATUS ----------------%
+%-------------------------------------------------------------------%
+
+\section{Population and economic status}
+
+\subsection{Population}
+
+In July 2019 the National Administrative Department of Statistics (DANE) presented a population census conducted in 2018 showing that the population in Colombia was 48.2 Million inhabitants \cite{dane_population_2020}. The data provided by the DANE shows that the population growth rate by 2020 is approximately 1.4\%. Thus, the population at the end of 2020 will be approximately 49.6 million:
+
+\begin{equation}
+    P_{2019}=P_{2018}(1+0.014)^{1}=48.9M
+    \label{eq:pop_2019}
+\end{equation}
+\begin{equation}
+    P_{2020}=P_{2018}(1+0.014)^{2}=49.6M
+    \label{eq:pop_2020}
+\end{equation}
+
+\subsection{Gross Domestic Product}
+
+As stated by the World Bank, the Colombian GDP by the end of 2019 was \$323.8 Billion with an annual growth rate of 3.3\% \cite{world_bank_data}. Using the population of 2019 (equation \ref{eq:pop_2019}) the current GDP per capita yields:
+
+\begin{equation}
+    \frac{\$323,803Mill}{48,934,113}=\$6,617 \textrm{ per capita}
+\end{equation}
+
+According to the DANE the Colombian GDP presented a 15.7\% decrease during the second trimester of 2020 with respect to the same period of 2019, due to the economic impact of COVID. However, the impact produced by the pandemic during the first half of 2020 is beyond the scope of this study. For the projection of GDP growth at the end of 2020 an annual rate similar to 2019 will be used, in this case 3\%. The result of the estimation of GDP for 2020 is:
+
+\begin{equation}
+    GDP_{2020}=GDP_{2019}(1+0.03)^{1}=\$333.5 \textrm{ Billion}
+    \label{eq:GDP_2020}
+\end{equation}
+
+In this way, using 2020 GDP and 2020 projection of population the result will be \$6,721 per capita, representing a growth of 1.57\% with respect to 2019.
+
+\begin{equation}
+    \frac{\$333,514Mill}{49,619,190}=\$6,721 \textrm{ per capita}
+\end{equation}
+
+% ------------------------------------------------------
+% --------------------  REFERENCES  --------------------
+% ------------------------------------------------------
+\newpage
+% \section{References}
+
+%If you are testing Biber/Biblatex, this citation contains Icelandic characters \cite{foley2013dustcloud}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+% ------------------------------------------------------
+% ---------------------  APPENDIX  ---------------------
+% ------------------------------------------------------
+% Uncoment this for appendix
+%\newpage
+%\appendix
+%\section{Design documents}
+%Put CAD drawings, additional sketches
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% TeXStudio Magic Comments %%%%%%%%%%%%%%%%%%%%%
+%% These comments that start with "!TeX" modify the way TeXStudio works
+%% For details see http://texstudio.sourceforge.net/manual/current/usermanual_en.html   Section 4.10
+%%
+%% What encoding is the file in?
+% !TeX encoding = UTF-8
+%% What language should it be spellchecked?
+% !TeX spellcheck = en_US
+%% What program should I compile this document with?
+% !TeX program = latex
+%% Which program should be used for generating the bibliography?
+% !TeX TXS-program:bibliography = txs:///bibtex
+%% This also sets the bibliography program for TeXShop and TeXWorks
+% !BIB program = bibtex
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
